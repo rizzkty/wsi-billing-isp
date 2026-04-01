@@ -1,6 +1,5 @@
 <?php
 // config/database.php
-// JANGAN di-push ke GitHub! Sudah ada di .gitignore
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
