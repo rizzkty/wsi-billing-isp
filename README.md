@@ -1,18 +1,3 @@
-# Billing ISP — Sistem Login Multi-Role
-
-Sistem login PHP murni (MySQLi) dengan 3 level hak akses untuk manajemen ISP.
-
-## Role & Hak Akses
-
-| Role | Buat User | Kelola Pelanggan | Kelola Pembayaran | Kelola Jaringan |
-|------|:---------:|:----------------:|:-----------------:|:---------------:|
-| **Pemilik** | ✅ | ✅ | ✅ | ✅ |
-| **Admin**   | ❌ | ✅ | ✅ | ✅ |
-| **Teknisi** | ❌ | ✅ (lihat) | ❌ | ✅ |
-
-> Hanya **Pemilik** yang dapat membuat akun baru.
-
----
 
 ## Cara Setup Lokal (Anggota Tim)
 
@@ -53,28 +38,6 @@ http://localhost/billing-isp/login.php
 
 ---
 
-## Struktur Folder
-
-```
-billing-isp/
-├── config/
-│   ├── database.php          ← TIDAK di-push (ada di .gitignore)
-│   └── database.example.php  ← Template untuk anggota tim
-├── includes/
-│   ├── auth.php              ← Fungsi login, logout, cek role
-│   └── 403.php               ← Halaman akses ditolak
-├── pages/
-│   ├── pemilik/dashboard.php ← Dashboard + manajemen user
-│   ├── admin/dashboard.php
-│   └── teknisi/dashboard.php
-├── login.php
-├── logout.php
-├── database.sql              ← Struktur tabel + akun default
-├── .gitignore
-└── README.md
-```
-
----
 
 ## Workflow Tim (Git)
 
@@ -93,14 +56,4 @@ git push origin feature/nama-fitur
 # Buat Pull Request di GitHub → ke branch dev
 ```
 
----
 
-## Keamanan yang Sudah Diterapkan
-
-- ✅ Password di-hash dengan `bcrypt` (cost 12)
-- ✅ Proteksi CSRF di setiap form POST
-- ✅ Session di-regenerate setelah login
-- ✅ Prepared statements (anti SQL injection)
-- ✅ Output di-escape dengan `htmlspecialchars()`
-- ✅ Session timeout 8 jam
-- ✅ Log aktivitas login/logout/tambah user
