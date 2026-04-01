@@ -1,0 +1,30 @@
+# Database config (JANGAN push ke GitHub!)
+config/database.php
+
+# Environment file
+.env
+*.env
+
+# Log files
+*.log
+/logs/
+
+# Vendor (Composer)
+/vendor/
+
+# Cache
+/cache/
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Upload user
+/uploads/
