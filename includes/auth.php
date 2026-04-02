@@ -11,7 +11,7 @@ if (session_status() === PHP_SESSION_NONE) {
     ]);
 }
 
-// ─── Regenerasi token CSRF ────────────────────────────────────────────────────
+// ─── Regenerasi token CSRF 
 function csrf_token(): string {
     if (empty($_SESSION['csrf_token'])) {
         $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
@@ -27,7 +27,7 @@ function csrf_verify(): void {
     }
 }
 
-// ─── Login ────────────────────────────────────────────────────────────────────
+// ─── Login 
 function login(string $username, string $password): array {
     $db   = getDB();
     $stmt = $db->prepare(
@@ -59,7 +59,7 @@ function login(string $username, string $password): array {
     return ['sukses' => true, 'role' => $user['role']];
 }
 
-// ─── Logout ───────────────────────────────────────────────────────────────────
+// ─── Logout 
 function logout(): void {
     if (!empty($_SESSION['user_id'])) {
         log_aktivitas($_SESSION['user_id'], 'LOGOUT', 'Logout');
@@ -70,7 +70,7 @@ function logout(): void {
     exit;
 }
 
-// ─── Cek login ────────────────────────────────────────────────────────────────
+// ─── Cek login 
 function cekLogin(): void {
     if (empty($_SESSION['user_id'])) {
         header('Location: /billing-isp/login.php');
