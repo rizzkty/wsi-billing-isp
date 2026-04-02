@@ -204,7 +204,7 @@ $users = $db->query(
     <div class="nav-brand">🌐 <span>Billing ISP</span></div>
     <div style="display:flex;align-items:center;gap:1rem">
         <span class="nav-role">👑 <?= htmlspecialchars($_SESSION['nama']) ?></span>
-        <form method="POST" action="/logout.php">
+        <form method="POST" action="/billing-isp/logout.php">
             <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>">
             <button class="btn-logout" type="submit">Keluar</button>
         </form>
