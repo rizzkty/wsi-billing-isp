@@ -82,7 +82,7 @@ function cekLogin(): void {
     }
 }
 
-// ─── Cek role ─────────────────────────────────────────────────────────────────
+// ─── Cek role 
 /**
  * Hentikan akses jika role tidak diizinkan.
  * Contoh: cekRole(['pemilik', 'admin'])
@@ -103,7 +103,7 @@ function roleSaat(): string {
 function isPemilik(): bool { return roleSaat() === 'pemilik'; }
 function isAdmin(): bool   { return in_array(roleSaat(), ['pemilik', 'admin'], true); }
 
-// ─── Redirect setelah login berdasarkan role ──────────────────────────────────
+// ─── Redirect setelah login berdasarkan rol
 function redirectDashboard(): void {
     $map = [
         'pemilik'  => '/billing-isp/pages/pemilik/dashboard.php',
@@ -115,7 +115,7 @@ function redirectDashboard(): void {
     exit;
 }
 
-// ─── Log aktivitas ────────────────────────────────────────────────────────────
+// ─── Log aktivitas 
 function log_aktivitas(int $user_id, string $aksi, string $keterangan = ''): void {
     try {
         $db   = getDB();
